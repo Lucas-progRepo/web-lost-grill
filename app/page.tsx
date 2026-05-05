@@ -2,190 +2,230 @@ export default function Page() {
   return (
     <main className="relative">
       {/* NAV */}
-      <header className="absolute top-0 left-0 right-0 z-20">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10 py-6 flex items-center justify-between">
-          <a href="#top" className="font-display text-xl tracking-tight">
+      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-bg/70 border-b border-line/60">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+          <a href="#hero" className="font-display text-lg tracking-tight">
             Lost <span className="italic text-accent">Grill</span>
           </a>
-          <nav className="hidden md:flex items-center gap-8 text-sm text-inkSoft">
-            <a href="#filosofia" className="hover:text-ink transition-colors duration-200">Filosofía</a>
-            <a href="#mesa" className="hover:text-ink transition-colors duration-200">La mesa</a>
-            <a href="#local" className="hover:text-ink transition-colors duration-200">El local</a>
-            <a href="#contacto" className="hover:text-ink transition-colors duration-200">Contacto</a>
+          <nav className="hidden md:flex items-center gap-8">
+            <a href="#sobre-nosotros" className="nav-link">Sobre</a>
+            <a href="#carta" className="nav-link">Carta</a>
+            <a href="#local" className="nav-link">Local</a>
+            <a href="#contacto" className="nav-link">Contacto</a>
           </nav>
+          <span className="md:hidden text-[11px] tracking-[0.2em] text-inkSoft uppercase">Madrid</span>
         </div>
       </header>
 
       {/* HERO */}
-      <section id="top" className="relative min-h-screen hero-bg overflow-hidden flex items-center">
-        <div className="grain" />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-bg/60" />
+      <section id="hero" className="relative min-h-[100vh] flex items-center embers overflow-hidden">
+        <div className="noise" />
         <div className="relative max-w-6xl mx-auto px-6 lg:px-10 w-full pt-32 pb-20">
-          <div className="max-w-4xl">
-            <div className="pill mb-10">
-              <span className="dot" />
-              <span>Parrilla · Madrid</span>
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+            <div className="lg:col-span-9">
+              <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-line text-[11px] uppercase tracking-[0.2em] text-inkSoft">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+                Parrilla · Madrid
+              </span>
+              <h1 className="mt-8 font-display font-normal leading-[0.95] tracking-tight" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)' }}>
+                Donde la <span className="italic text-accent">brasa</span><br />manda.
+              </h1>
+              <p className="mt-8 max-w-xl text-inkSoft leading-[1.7]" style={{ fontSize: '1.0625rem' }}>
+                Carne, fuego y tiempo. Lost Grill es una parrilla en Madrid construida alrededor de una idea sencilla: producto honesto cocinado sobre brasa de verdad.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <a href="#carta" className="btn">
+                  Ver la carta
+                  <span aria-hidden="true">→</span>
+                </a>
+                <a href="#contacto" className="btn btn-ghost">Cómo llegar</a>
+              </div>
             </div>
-            <h1 className="font-display h1 font-normal mb-8">
-              Donde la <em className="italic text-accent">brasa</em> manda.
-            </h1>
-            <p className="body-lg text-inkSoft max-w-xl mb-12">
-              Carne, fuego y tiempo. Lost Grill es una parrilla en Madrid construida alrededor de una idea sencilla: producto honesto cocinado sobre brasa de verdad.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a href="#contacto" className="btn">
-                Cómo llegar
-                <span aria-hidden>→</span>
-              </a>
-              {/* pending real phone */}
-              <a href="#" className="btn-ghost">Llamar</a>
+            <div className="lg:col-span-3 hidden lg:block">
+              <div className="text-right">
+                <div className="font-display italic text-accent text-5xl leading-none">01</div>
+                <div className="mt-3 text-[11px] uppercase tracking-[0.25em] text-inkSoft">Capítulo</div>
+                <div className="mt-1 text-sm text-inkSoft">Brasa de encina</div>
+                <div className="mt-12 text-[11px] uppercase tracking-[0.25em] text-inkSoft">Producto · Fuego · Tiempo</div>
+              </div>
             </div>
           </div>
+        </div>
+        {/* Scroll cue */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.3em] text-inkSoft/70">
+          Scroll
+        </div>
+      </section>
 
-          {/* meta strip */}
-          <div className="absolute bottom-10 left-6 lg:left-10 right-6 lg:right-10 flex items-end justify-between text-inkSoft">
-            <div className="overline">Est. — Madrid</div>
-            <div className="hidden md:block overline text-right">
-              Brasa de encina<br/>
-              <span className="text-ink">cocción al fuego</span>
+      {/* SOBRE NOSOTROS */}
+      <section id="sobre-nosotros" className="relative py-24 lg:py-40 section-hover">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10 relative">
+          <span className="bg-number" aria-hidden="true">01</span>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+            <div className="lg:col-span-4">
+              <div className="text-[11px] uppercase tracking-[0.25em] text-accent">Capítulo 01 — Sobre nosotros</div>
+              <div className="editorial-bar mt-10" />
+            </div>
+            <div className="lg:col-span-8 relative">
+              <h2 className="font-display font-normal leading-[1.05] tracking-tight" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
+                Sin atajos, sin <span className="italic text-accent">humo</span> de marketing.
+              </h2>
+              <p className="mt-10 max-w-2xl text-inkSoft leading-[1.8]" style={{ fontSize: '1.0625rem' }}>
+                Trabajamos con cortes seleccionados, brasa de encina y la paciencia que exige cocinar al fuego. Cada plato sale cuando tiene que salir. Esa es toda la fórmula.
+              </p>
+              <div className="mt-14 grid sm:grid-cols-3 gap-8 pt-10 border-t border-line">
+                <div>
+                  <div className="font-display italic text-accent text-3xl">01</div>
+                  <div className="mt-3 text-[11px] uppercase tracking-[0.2em] text-inkSoft">Producto</div>
+                  <div className="mt-2 text-sm text-ink/90">Cortes seleccionados pieza a pieza.</div>
+                </div>
+                <div>
+                  <div className="font-display italic text-accent text-3xl">02</div>
+                  <div className="mt-3 text-[11px] uppercase tracking-[0.2em] text-inkSoft">Fuego</div>
+                  <div className="mt-2 text-sm text-ink/90">Brasa de encina, calor lento.</div>
+                </div>
+                <div>
+                  <div className="font-display italic text-accent text-3xl">03</div>
+                  <div className="mt-3 text-[11px] uppercase tracking-[0.2em] text-inkSoft">Tiempo</div>
+                  <div className="mt-2 text-sm text-ink/90">Cada pieza sale cuando toca.</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FILOSOFÍA */}
-      <section id="filosofia" className="relative bg-bg py-24 lg:py-40 overflow-hidden">
-        <div className="absolute top-10 right-6 lg:right-20 numeral" aria-hidden>01</div>
+      {/* CARTA */}
+      <section id="carta" className="relative py-24 lg:py-40 bg-surface border-y border-line">
+        <div className="absolute inset-y-0 left-0 w-32 diag-lines hidden lg:block" aria-hidden="true" />
         <div className="max-w-6xl mx-auto px-6 lg:px-10 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-            <div className="lg:col-span-4">
-              <p className="overline text-accent mb-6">Capítulo 01 — Filosofía</p>
-              <span className="bar mb-8" />
-            </div>
-            <div className="lg:col-span-8">
-              <h2 className="font-display h2 font-normal mb-10">
-                Sin atajos, sin <em className="italic text-inkSoft">humo</em> de marketing.
+          <span className="bg-number" aria-hidden="true">02</span>
+          <div className="grid lg:grid-cols-12 gap-12 mb-16">
+            <div className="lg:col-span-5">
+              <div className="text-[11px] uppercase tracking-[0.25em] text-accent">Capítulo 02 — La carta</div>
+              <div className="editorial-bar mt-8" />
+              <h2 className="mt-6 font-display font-normal leading-[1.05] tracking-tight" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
+                Lo que ponemos sobre la <span className="italic text-accent">brasa</span>.
               </h2>
-              <p className="body-lg text-inkSoft max-w-2xl">
-                Trabajamos con cortes seleccionados, brasa de encina y la paciencia que exige cocinar al fuego. Cada plato sale cuando tiene que salir. Esa es toda la fórmula.
+            </div>
+            <div className="lg:col-span-6 lg:col-start-7 lg:pt-16">
+              <p className="text-inkSoft leading-[1.8]" style={{ fontSize: '1.0625rem' }}>
+                Carta corta, viva, con criterio. Cambia con el mercado y con lo que tenga sentido el día que vengas.
               </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* PROPUESTA / LA MESA */}
-      <section id="mesa" className="relative bg-surface py-24 lg:py-40 overflow-hidden">
-        <div className="absolute inset-y-0 left-0 w-24 diag-pattern hidden lg:block" aria-hidden />
-        <div className="absolute top-12 left-6 lg:left-24 numeral" aria-hidden>02</div>
-        <div className="max-w-6xl mx-auto px-6 lg:px-10 relative">
-          <div className="max-w-3xl mb-16 lg:mb-24 group">
-            <p className="overline text-accent mb-6">Capítulo 02 — La mesa</p>
-            <span className="bar bar-grow mb-8" />
-            <h2 className="font-display h2 font-normal">
-              Lo que ponemos sobre la <em className="italic">brasa</em>.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-line">
+          <div className="grid sm:grid-cols-2 gap-px bg-line">
             {[
               { n: '01', t: 'Carnes maduradas', d: 'Cortes nacionales y de importación seleccionados pieza a pieza.' },
               { n: '02', t: 'Brasa de encina', d: 'Calor lento, ahumado limpio, sin trampas.' },
               { n: '03', t: 'Guarniciones de mercado', d: 'Verdura de temporada asada al rescoldo.' },
               { n: '04', t: 'Vinos de productor', d: 'Carta corta, viva, con criterio.' }
-            ].map((it) => (
-              <article key={it.n} className="card">
-                <div className="flex items-baseline justify-between mb-6">
-                  <span className="overline text-inkSoft">{it.n}</span>
-                  <span className="h-px w-10 bg-line" />
+            ].map((item) => (
+              <article key={item.n} className="menu-card group">
+                <div className="flex items-start justify-between gap-6">
+                  <div className="flex-1">
+                    <div className="font-display italic text-accent text-2xl leading-none">{item.n}</div>
+                    <h3 className="mt-5 font-display font-normal" style={{ fontSize: 'clamp(1.25rem, 2.5vw, 1.75rem)' }}>
+                      {item.t}
+                    </h3>
+                    <p className="mt-3 text-inkSoft leading-relaxed text-[15px]">{item.d}</p>
+                  </div>
+                  <span className="text-inkSoft/40 transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:text-accent" aria-hidden="true">→</span>
                 </div>
-                <h3 className="font-display h3 mb-3">{it.t}</h3>
-                <p className="text-inkSoft body-lg">{it.d}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* AMBIENTE */}
-      <section id="local" className="relative ambiente-bg py-32 lg:py-48 overflow-hidden">
-        <div className="grain" />
-        <div className="absolute top-12 right-6 lg:right-20 numeral" aria-hidden>03</div>
+      {/* LOCAL */}
+      <section id="local" className="relative py-24 lg:py-40 local-bg overflow-hidden section-hover">
+        <div className="noise" />
         <div className="max-w-6xl mx-auto px-6 lg:px-10 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            <div className="lg:col-span-7 lg:col-start-2">
-              <p className="overline text-accent mb-6">Capítulo 03 — El local</p>
-              <span className="bar mb-8" />
-              <h2 className="font-display h2 font-normal mb-10">
-                Un sitio para <em className="italic">quedarse</em>.
+          <span className="bg-number" aria-hidden="true">03</span>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            <div className="lg:col-span-6">
+              <div className="text-[11px] uppercase tracking-[0.25em] text-accent">Capítulo 03 — El local</div>
+              <div className="editorial-bar mt-8" />
+              <h2 className="mt-6 font-display font-normal leading-[1.05] tracking-tight" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
+                Un sitio para <span className="italic text-accent">quedarse</span>.
               </h2>
-              <p className="body-lg text-ink/90 max-w-xl">
+              <p className="mt-8 max-w-lg text-ink/85 leading-[1.8]" style={{ fontSize: '1.0625rem' }}>
                 Madera, hierro y luz baja. Un local pensado para cenas largas, sobremesa con vino y conversación que no acaba en el postre.
               </p>
+            </div>
+            <div className="lg:col-span-6">
+              <div className="relative aspect-[4/5] lg:aspect-[16/14] border border-line/80 overflow-hidden bg-gradient-to-br from-accentSoft via-surface to-bg">
+                <div className="noise" />
+                <div className="absolute top-6 right-6 text-[10px] uppercase tracking-[0.3em] text-inkSoft">Lost Grill · Madrid</div>
+                <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+                  <div className="font-display italic text-ink/90 text-5xl leading-none">03</div>
+                  <div className="text-right text-[11px] uppercase tracking-[0.25em] text-inkSoft">El espacio</div>
+                </div>
+                <div className="absolute inset-12 border border-line/50" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CONTACTO */}
-      <section id="contacto" className="relative bg-bg py-24 lg:py-40">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10">
-          <div className="max-w-3xl mb-16">
-            <p className="overline text-accent mb-6">Encuentra el fuego</p>
-            <span className="bar mb-8" />
-            <h2 className="font-display h2 font-normal">
-              Pásate por <em className="italic">Lost Grill</em>.
+      <section id="contacto" className="relative py-24 lg:py-40">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10 relative">
+          <div className="max-w-3xl">
+            <div className="text-[11px] uppercase tracking-[0.25em] text-accent">Encuentra el fuego</div>
+            <div className="editorial-bar mt-8" />
+            <h2 className="mt-6 font-display font-normal leading-[1.05] tracking-tight" style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}>
+              Pásate por <span className="italic text-accent">Lost Grill</span>.
             </h2>
+            <p className="mt-8 text-inkSoft leading-[1.8] max-w-xl" style={{ fontSize: '1.0625rem' }}>
+              Estamos terminando de afinar los detalles de contacto. En cuanto cerremos teléfono, email y dirección exacta, los publicamos aquí.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-px bg-line border border-line">
-            <div className="lg:col-span-4 bg-bg p-8 lg:p-10">
-              <p className="overline text-inkSoft mb-4">Dirección</p>
-              <p className="font-display text-2xl mb-6">Madrid</p>
-              <p className="small text-inkSoft">Dirección exacta próximamente.</p>
+          <div className="mt-16 grid md:grid-cols-3 gap-px bg-line border border-line">
+            <div className="bg-bg p-8 md:p-10">
+              <div className="text-[11px] uppercase tracking-[0.25em] text-accent">Teléfono</div>
+              <div className="mt-5 font-display text-2xl text-ink/90">Próximamente</div>
+              <div className="mt-2 text-sm text-inkSoft">Pendiente de publicar</div>
             </div>
-            <div className="lg:col-span-4 bg-bg p-8 lg:p-10">
-              <p className="overline text-inkSoft mb-4">Teléfono</p>
-              <p className="font-display text-2xl mb-6">[TEL_PENDIENTE]</p>
-              <p className="overline text-inkSoft mb-4 mt-8">Email</p>
-              <p className="font-display text-lg break-all">[EMAIL_PENDIENTE]</p>
+            <div className="bg-bg p-8 md:p-10">
+              <div className="text-[11px] uppercase tracking-[0.25em] text-accent">Email</div>
+              <div className="mt-5 font-display text-2xl text-ink/90">Próximamente</div>
+              <div className="mt-2 text-sm text-inkSoft">Pendiente de publicar</div>
             </div>
-            <div className="lg:col-span-4 bg-bg p-8 lg:p-10">
-              <p className="overline text-inkSoft mb-4">Horario</p>
-              <p className="font-display text-2xl mb-6">[HORARIO_PENDIENTE]</p>
-              <div className="flex flex-col gap-3 mt-8">
-                {/* pending real phone */}
-                <a href="#" className="btn">Llamar<span aria-hidden>→</span></a>
-                {/* pending real phone */}
-                <a href="#" className="btn-ghost">WhatsApp</a>
-              </div>
+            <div className="bg-bg p-8 md:p-10">
+              <div className="text-[11px] uppercase tracking-[0.25em] text-accent">Ubicación</div>
+              <div className="mt-5 font-display text-2xl text-ink/90">Madrid</div>
+              <div className="mt-2 text-sm text-inkSoft">Dirección exacta próximamente</div>
             </div>
           </div>
 
-          {/* MAPA */}
-          <div className="mt-12 border border-line overflow-hidden" style={{ filter: 'grayscale(0.6) brightness(0.55) contrast(1.1)' }}>
-            <iframe
-              title="Mapa Madrid"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-3.7235%2C40.4080%2C-3.6735%2C40.4380&layer=mapnik"
-              width="100%"
-              height="360"
-              style={{ border: 0, display: 'block' }}
-              loading="lazy"
-            />
+          <div className="mt-16 flex flex-wrap gap-4 items-center">
+            <span className="text-[11px] uppercase tracking-[0.25em] text-inkSoft">Horario</span>
+            <span className="h-px w-12 bg-accent" />
+            <span className="font-display italic text-ink/80">Próximamente</span>
           </div>
         </div>
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-line bg-bg">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <footer className="relative border-t border-line py-14">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
-            <a href="#top" className="font-display text-xl tracking-tight">
-              Lost <span className="italic text-accent">Grill</span>
-            </a>
-            <p className="small text-inkSoft mt-2">Parrilla · Madrid</p>
+            <div className="font-display text-xl">Lost <span className="italic text-accent">Grill</span></div>
+            <div className="mt-3 text-[11px] uppercase tracking-[0.25em] text-inkSoft">Parrilla · Madrid</div>
           </div>
-          <p className="small text-inkSoft">© {new Date().getFullYear()} Lost Grill. Todos los derechos reservados.</p>
+          <div className="flex items-center gap-8 text-[11px] uppercase tracking-[0.2em] text-inkSoft">
+            <a href="#sobre-nosotros" className="nav-link">Sobre</a>
+            <a href="#carta" className="nav-link">Carta</a>
+            <a href="#local" className="nav-link">Local</a>
+            <a href="#contacto" className="nav-link">Contacto</a>
+          </div>
+          <div className="text-[11px] uppercase tracking-[0.2em] text-inkSoft/70">
+            © {new Date().getFullYear()} Lost Grill
+          </div>
         </div>
       </footer>
     </main>
