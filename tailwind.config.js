@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './app/**/*.{ts,tsx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
     extend: {
@@ -19,7 +19,7 @@ module.exports = {
         body: ['var(--font-manrope)', 'sans-serif']
       },
       transitionTimingFunction: {
-        'out-quart': 'cubic-bezier(0.23, 1, 0.32, 1)'
+        editorial: 'cubic-bezier(0.23, 1, 0.32, 1)'
       }
     }
   },
