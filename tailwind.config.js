@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./app/**/*.{ts,tsx}'],
+  content: [
+    './app/**/*.{ts,tsx}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -13,11 +15,11 @@ module.exports = {
         line: '#2a2520'
       },
       fontFamily: {
-        display: ['var(--font-display)', 'serif'],
-        body: ['var(--font-body)', 'sans-serif']
+        display: ['var(--font-fraunces)', 'serif'],
+        body: ['var(--font-manrope)', 'sans-serif']
       },
       transitionTimingFunction: {
-        editorial: 'cubic-bezier(0.23, 1, 0.32, 1)'
+        'out-quart': 'cubic-bezier(0.23, 1, 0.32, 1)'
       }
     }
   },
